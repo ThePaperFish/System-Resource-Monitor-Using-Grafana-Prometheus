@@ -1,0 +1,34 @@
+# Alerting configuration (optional, can be used with Alertmanager)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Scraping configuration
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+
+  - job_name: 'node_exporter'
+    static_configs:
+      - targets: ['node_exporter:8500']
+
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['cadvisor:8080']
+
+  - job_name: 'dcgm-exporter'
+    static_configs:
+      - targets: ['dcgm-exporter:9400']
+  # Add more scrape configurations here for other services/targets
+
+# Remote write configuration (optional)
+#remote_write:
+#  - url: http://<remote_write_endpoint>
+
+# Remote read configuration (optional)
+#remote_read:
+#  - url: http://<remote_read_endpoint>

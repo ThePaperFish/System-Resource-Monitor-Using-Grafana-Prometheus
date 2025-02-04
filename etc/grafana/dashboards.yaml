@@ -1,0 +1,26 @@
+apiVersion: 1
+providers:
+- name: 'Node Exporter Full'
+  orgId: 1
+  folder: ''
+  type: 'file'
+  disableDeletion: true
+  editable: true
+  options:
+    path: '/etc/grafana/dashboards'
+- name: 'Kubernetes cluster monitoring via Prometheus'
+  orgId: 1
+  folder: ''
+  type: 'file'
+  disableDeletion: true
+  editable: true
+  options:
+    path: '/etc/grafana/dashboards'
+- name: 'NVIDIA DCGM Exporter Dashboard'
+  orgId: 1
+  folder: ''
+  type: 'file'
+  disableDeletion: true
+  editable: true
+  options:
+    path: '/etc/grafana/dashboards'
